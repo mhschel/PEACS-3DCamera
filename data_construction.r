@@ -17,9 +17,7 @@ obs = read_csv2('data/clean.csv')[1:19] %>%
     )
   
   
-
-
-
+# Quick viz to inspect data
 ggplot(data = obs, aes(RR, QTc)) + 
   geom_point(aes(color = factor(Machine), shape = factor(ID)), size = 2) + 
   scale_shape_manual(values= LETTERS[1:19]) +
