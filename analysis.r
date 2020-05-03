@@ -50,3 +50,13 @@ sd_test_t_test = sd_test %>%
 hist(sd_test_t_test$machine_sd_diff, xlab = 'SD Without Camera - SD With 3D Camera')
 
 t.test(x = sd_test_t_test$machine_sd_diff, mu = 0)
+
+
+# Calculate strongly deviant measurement from GE
+GE_obs = obs_analysis %>%
+  filter(Machine == 'GE')
+
+mean(GE_obs$QTc_diff_ID_median)
+median(GE_obs$QTc_diff_ID_median)
+sum(GE_obs$QTc_diff_ID_mean < 0)  
+sum(GE_obs$QTc_diff_ID_mean > 0)  
