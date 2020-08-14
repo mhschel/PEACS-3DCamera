@@ -7,7 +7,7 @@ obs = read_csv2('data_v2/clean_v2.csv')[1:19] %>%
   group_by(ID, seq.nr) %>%
   slice(1) %>%
   ungroup() %>%
-  #filter(interference == 0) %>%
+  filter(interference == 0) %>%
   mutate(QT_ARI = ARI + 2 * dARI) %>%
   select(ID, Machine, seq.nr, RR = RR.interval, QT = external.QT, QTc = external.QTc, QT_ARI) %>%
   mutate(
