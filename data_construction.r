@@ -2,7 +2,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-obs = read_csv2('data/clean.csv')[1:19] %>%
+obs = read_csv2('data_v2/clean_v2.csv')[1:19] %>%
   rename_all(make.names) %>%
   group_by(ID, seq.nr) %>%
   slice(1) %>%
